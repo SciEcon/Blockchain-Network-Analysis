@@ -1,0 +1,32 @@
+Token name: LUSD
+Token genesis date: 2021-04-15
+The last date of the collected data: 22-07-12
+Analysis start date: 21-04-15
+Analysis end date: 22-07-11
+--------------------------------------------------
+
+======= Figure 1 =======
+Saved: ../Figure/LUSD_21-04-15_22-07-11/1_basic_trending.png
+
+======= Figure 2 =======
+Significant days VS Insignificant days: 326 (71.96%) | 127 (28.04%)
+Saved: ../Figure/LUSD_21-04-15_22-07-11/2_days_sig_vs_insig.png
+
+======= Figure 3 =======
+Saved: ../Figure/LUSD_21-04-15_22-07-11/3_core_sig_vs_insig.png
+
+======= Figure 4 =======
+Saved: ../Figure/LUSD_21-04-15_22-07-11/4_avg_core_neighber_sig_vs_insig.png
+
+======= Figure 5 =======
+Updated: ../Data/LUSD_22-07-12/03_core_address.csv
+CA VS EOA: 112 (29.63%) | 266 (70.37%)
+Saved: ../Figure/LUSD_21-04-15_22-07-11/5_core_days_count_CA_vs_EOA.png
+
+======= Figure 6 =======
+Saved: ../Figure/LUSD_21-04-15_22-07-11/6_network_dynamics.png
+
+======= Figure 7 =======
+Saved: ../Data/LUSD_22-07-12/04_correlation.csv
+Saved: ../Figure/LUSD_21-04-15_22-07-11/7_correlation_heatmap.png
+

@@ -1,0 +1,32 @@
+Token name: LQTY
+Token genesis date: 2021-04-05
+The last date of the collected data: 22-07-12
+Analysis start date: 21-04-05
+Analysis end date: 22-07-11
+--------------------------------------------------
+
+======= Figure 1 =======
+Saved: ../Figure/LQTY_21-04-05_22-07-11/1_basic_trending.png
+
+======= Figure 2 =======
+Significant days VS Insignificant days: 349 (75.38%) | 114 (24.62%)
+Saved: ../Figure/LQTY_21-04-05_22-07-11/2_days_sig_vs_insig.png
+
+======= Figure 3 =======
+Saved: ../Figure/LQTY_21-04-05_22-07-11/3_core_sig_vs_insig.png
+
+======= Figure 4 =======
+Saved: ../Figure/LQTY_21-04-05_22-07-11/4_avg_core_neighber_sig_vs_insig.png
+
+======= Figure 5 =======
+Updated: ../Data/LQTY_22-07-12/03_core_address.csv
+CA VS EOA: 45 (39.13%) | 70 (60.87%)
+Saved: ../Figure/LQTY_21-04-05_22-07-11/5_core_days_count_CA_vs_EOA.png
+
+======= Figure 6 =======
+Saved: ../Figure/LQTY_21-04-05_22-07-11/6_network_dynamics.png
+
+======= Figure 7 =======
+Saved: ../Data/LQTY_22-07-12/04_correlation.csv
+Saved: ../Figure/LQTY_21-04-05_22-07-11/7_correlation_heatmap.png
+
