@@ -28,8 +28,8 @@ def main(args):
     today = date.today().strftime('%y-%m-%d')
     dtypes = {'token_address':str, 'from_address':str, 'to_address':str, 'timestamp':str, 'value':np.float64}
     data = pd.read_csv(f"../Data/{token_name}_{today}.csv", dtype=dtypes)
-    start_date = list(data['timestamp'].unique())[0]
-    end_date = list(data['timestamp'].unique())[-1]
+    start_date = list(data['timestamp'].unique())[-1]
+    end_date = list(data['timestamp'].unique())[0]
     
     # Aggregate tx values between the addresses pair on the same day
     agg_data = data.groupby(['timestamp','from_address','to_address']).sum().reset_index()
