@@ -20,7 +20,7 @@ cd Main
 3. Query token transaction records via [Kaggle Integration of BigQuery](https://www.kaggle.com/datasets/bigquery/ethereum-blockchain)
 
 - Run this notebook: https://www.kaggle.com/code/bruceyufanzhang/blockchain
-- Download and put the queried CSV file under `./Data/`
+- Download the queried CSV files and put them file under `./Data/`
 - **Note**: You must use Kaggle to run the notebook. It won't work otherwise.
 
 4. Construct network features
