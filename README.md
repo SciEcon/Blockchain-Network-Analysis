@@ -33,9 +33,9 @@ nohup python 01_Network_Features.py --token-name LUSD >> ./logs/LUSD.txt
 - **Note**: If you are using ssh, you might need to use `nohup` instead of `python` to run the Python since it might takes **hours** for the [core-periphery test](https://github.com/skojaku/core-periphery-detection).
 - The output data will be saved to `./Data/{token_name}_{data_collected_date}/`
 
-5. Register a [infura project](https://infura.io/) for Ethereum API use, and copy the ENDPOINTS
+5. Register a [infura project](https://infura.io/) for Ethereum API use, and remember the ENDPOINTS
 
-- The infura ENDPOINTS will be used to detect whether an address is CA or EOA, vis [Web3.py](https://web3py.readthedocs.io/en/stable/quickstart.html)
+- The infura ENDPOINTS will be used to detect whether an address is CA or EOA, through [Web3.py](https://web3py.readthedocs.io/en/stable/quickstart.html)
    
 6. Run the blockchian network analysis and get the visualizations
 
