@@ -1,7 +1,7 @@
 # BNS-LQTY
 Blockchain Network Study on LQTY
 
-# How to use
+## How to use
 
 1. Create a [conda](https://docs.conda.io/en/latest/) environment with Python>3.7
 
@@ -46,3 +46,7 @@ python 02_Feature_Analysis.py --token-name LUSD --infura-url <infura ENDPOINTS> 
 
 - **FYI**: Token genesis date (LQTY: 2021-04-05, LUSD: 2021-04-15)
 - The output figures will be saved to `./Figure/{token_name}_{start_date}_{end_date}`
+
+## Acknowledgements
+
+Code derived and reshaped from: [BNS](https://github.com/Blockchain-Network-Studies/BNS)
