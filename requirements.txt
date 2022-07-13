@@ -1,0 +1,7 @@
+pandas
+numpy
+networkx
+cpnet
+python-louvain
+seaborn
+web3

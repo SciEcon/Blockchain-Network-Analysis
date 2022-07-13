@@ -1,8 +1,7 @@
 import os
-import time
 import numpy as np
 import pandas as pd
-from datetime import datetime, date
+from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import community
 import networkx as nx
@@ -10,17 +9,10 @@ import cpnet
 import matplotlib.pyplot as plt
 import seaborn as sns
 import warnings 
-import requests
 from web3 import Web3
 warnings.filterwarnings('ignore')
 
 from utils.analysis import filter_date, count_unique_addresses, sum_value
-
-infura_url = 'https://mainnet.infura.io/v3/fc6dbeee65044e24a744ff54fec1718d'
-web3 = Web3(Web3.HTTPProvider(infura_url))
-
-def check_contract(address):
-    return 1 if web3.eth.get_code(Web3.toChecksumAddress(address)).hex()=='0x' else 0
 
 def main(args):
     token_name = args.token_name
@@ -141,7 +133,10 @@ def main(args):
     # Core days count distribution of CA and EOA
     print('======= Figure 5 =======')
     # Get the type (CA/EOA) of each address via Web3.py
-    core_address['type'] = core_address['address'].apply(check_contract)
+    infura_url = args.infura_url #'https://mainnet.infura.io/v3/fc6dbeee65044e24a744ff54fec1718d'
+    web3 = Web3(Web3.HTTPProvider(infura_url))
+
+    core_address['type'] = core_address['address'].apply(lambda x: 1 if web3.eth.get_code(Web3.toChecksumAddress(x)).hex()=='0x' else 0)
     core_address.to_csv(f'{DATA_DIR}/03_core_address.csv', index=False)
     print(f'Updated: {DATA_DIR}/03_core_address.csv')
     core_CA = core_address[core_address['type'] == 0]
@@ -217,6 +212,7 @@ if __name__ == '__main__':
     parser.add_argument('--data-date', type=str, default='2022-07-12', help='The last date of the collected data')
     parser.add_argument('--start-date', type=str, default='2021-04-05', help='Start date')
     parser.add_argument('--end-date', type=str, default='2022-07-11', help='Start date')
+    parser.add_argument('--infura-url', type=str, help='Infura URL for the Ethereum node')
 
     args = parser.parse_args()
 
