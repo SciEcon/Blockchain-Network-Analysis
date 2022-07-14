@@ -9,7 +9,7 @@ Analysis end date: 22-07-11
 Saved: ../Figure/LUSD_21-04-15_22-07-11/1_basic_trending.png
 
 ======= Figure 2 =======
-Significant days VS Insignificant days: 326 (71.96%) | 127 (28.04%)
+Significant days VS Insignificant days: 325 (72.06%) | 126 (27.94%)
 Saved: ../Figure/LUSD_21-04-15_22-07-11/2_days_sig_vs_insig.png
 
 ======= Figure 3 =======

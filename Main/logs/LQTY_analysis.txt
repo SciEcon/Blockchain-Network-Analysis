@@ -9,7 +9,7 @@ Analysis end date: 22-07-11
 Saved: ../Figure/LQTY_21-04-05_22-07-11/1_basic_trending.png
 
 ======= Figure 2 =======
-Significant days VS Insignificant days: 349 (75.38%) | 114 (24.62%)
+Significant days VS Insignificant days: 348 (75.49%) | 113 (24.51%)
 Saved: ../Figure/LQTY_21-04-05_22-07-11/2_days_sig_vs_insig.png
 
 ======= Figure 3 =======

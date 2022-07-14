@@ -15,6 +15,7 @@ warnings.filterwarnings('ignore')
 from utils.analysis import filter_date, count_unique_addresses, sum_value
 
 def main(args):
+    # Set parameters
     token_name = args.token_name
 
     data_date = datetime.strptime(args.data_date, '%Y-%m-%d')
@@ -27,8 +28,9 @@ def main(args):
     end_date_str = end_date.strftime('%y-%m-%d')
 
     DATA_DIR = f'../Data/{token_name}_{data_date_str}'
-    FIGURE_DIR = f'../Figure/{token_name}_{start_date_str}_{end_date_str}'
 
+    # Make figure directory
+    FIGURE_DIR = f'../Figure/{token_name}_{start_date_str}_{end_date_str}'
     if os.path.exists(FIGURE_DIR) is False:
         os.makedirs(FIGURE_DIR)
         
@@ -38,6 +40,7 @@ def main(args):
     print('Analysis start date: {}'.format(start_date_str))
     print('Analysis end date: {}'.format(end_date_str))
     print('--------------------------------------------------\n')
+    
     
     # Read data =======
     # Raw transaction date
@@ -62,26 +65,26 @@ def main(args):
     core_address = pd.read_csv(f'{DATA_DIR}/03_core_address.csv')
     
     # Analysis & Visualization =======
-    # Preprocess data
-    network_fea['address_count'] = raw_tx.groupby('timestamp').apply(count_unique_addresses).reset_index().drop(columns=['level_1'])['address_count']
-    network_fea['value_sum'] = agg_tx.groupby('timestamp').apply(sum_value).reset_index().drop(columns=['level_1'])['value_sum']
+    plt.style.use('seaborn-muted')
 
-    fig,axes = plt.subplots(1,2)
-    plt.style.use('default')
-
+    
     # ======= Figure 1 =======
     # Basic trending
     print('======= Figure 1 =======')
+    # Preprocess data
+    network_fea['address_count'] = raw_tx.groupby('timestamp').apply(count_unique_addresses).reset_index().drop(columns=['level_1'])['address_count']
+    network_fea['value_sum'] = agg_tx.groupby('timestamp').apply(sum_value).reset_index().drop(columns=['level_1'])['value_sum']
+    fig, axes = plt.subplots(1,2)
     # Addresses count
     network_fea[['address_count']].plot(ax=axes[0], figsize=(15,4), grid=False, title='Daily addresses count', xlabel='day', ylabel='count')
-
     # Tx daily value
     ax = network_fea[['value_sum']].plot(ax=axes[1], figsize=(15,4), grid=False, title='Daily transaction value', xlabel='day', ylabel='value (Wei)')
     ax.set_yscale('log')
 
-    plt.subplots_adjust(wspace =0.15, hspace =0.35)
-    plt.savefig(f'{FIGURE_DIR}/1_basic_trending.png', dpi=300)
+    plt.subplots_adjust(wspace=0.15, hspace=0.35)
+    plt.savefig(f'{FIGURE_DIR}/1_basic_trending.png', dpi=300, bbox_inches='tight')
     print(f'Saved: {FIGURE_DIR}/1_basic_trending.png\n')
+    
     
     # ======= Figure 2 =======
     # Distribution on significant & insignificant days 
@@ -92,12 +95,19 @@ def main(args):
     sig_per = 100*len(sig_T)/len(network_fea)
     insig_per = 100*sig_F.shape[0]/network_fea.shape[0]
 
-    plt.bar(['Significant ({:.4}%)'.format(sig_per), 'Non-significant ({:.4}%)'.format(insig_per)], [len(sig_T), len(sig_F)], width = 0.6)
-    plt.savefig(f'{FIGURE_DIR}/2_days_sig_vs_insig.png', dpi=300)
+    fig, ax = plt.subplots()
+    ax.bar(
+        ['Significant ({:.4}%)'.format(sig_per), 'Non-significant ({:.4}%)'.format(insig_per)], 
+        [len(sig_T), len(sig_F)], width = 0.6, 
+    )
+    ax.set_title('Days count of significant and insignificant cp test')
+    ax.set_ylabel('Days')
 
+    plt.savefig(f'{FIGURE_DIR}/2_days_sig_vs_insig.png', dpi=300, bbox_inches='tight')
     print('Significant days VS Insignificant days: {} ({:.4}%) | {} ({:.4}%)'.format(len(sig_T), sig_per, sig_F.shape[0], insig_per))
     print(f'Saved: {FIGURE_DIR}/2_days_sig_vs_insig.png\n')
     
+
     # ======= Figure 3 =======
     # Distribution of core nodes numbers
     print('======= Figure 3 =======')
@@ -105,35 +115,37 @@ def main(args):
     num_core_sig_F = sig_F['num_core']
 
     plt.style.use('seaborn-muted')
-    plt.figure(figsize=(5, 8))
+    plt.figure(figsize=(16, 8))
     dt = pd.DataFrame({'Significant':num_core_sig_T, 'Insignificant':num_core_sig_F})
-    dt.boxplot(widths = 0.4,whis=0.5)
+    dt.boxplot(widths = 0.4,whis=0.5,vert=False)
     plt.title('Distribution of core nodes numbers')
-    plt.ylabel('Number of nodes in the core')
+    plt.xlabel('Number of nodes in the core')
     plt.rc('font', size=13) # controls default text sizes
-    plt.savefig(f'{FIGURE_DIR}/3_core_sig_vs_insig.png', dpi=300)
+    plt.savefig(f'{FIGURE_DIR}/3_core_sig_vs_insig.png', dpi=300, bbox_inches='tight')
     print(f'Saved: {FIGURE_DIR}/3_core_sig_vs_insig.png\n')
     
+
     # ======= Figure 4 =======
     # Distribution of avg number of neighbors of core nodes
     print('======= Figure 4 =======')
     avg_core_neighbor_sig_T = sig_T['avg_core_neighbor']
     avg_core_neighbor_sig_F = sig_F['avg_core_neighbor']
 
-    plt.figure(figsize=(5, 8))
+    plt.figure(figsize=(16, 8))
     dt = pd.DataFrame({'Significant':avg_core_neighbor_sig_T, 'Insignificant':avg_core_neighbor_sig_F})
-    dt.boxplot(widths = 0.4,whis=0.5)
+    dt.boxplot(widths = 0.4,whis=0.5,vert=False)
     plt.title('Distribution of avg number of neighbors of core nodes')
     plt.ylabel('Avg number of neighbors of core nodes')
     plt.rc('font', size=13)
-    plt.savefig(f'{FIGURE_DIR}/4_avg_core_neighber_sig_vs_insig.png', dpi=300)
+    plt.savefig(f'{FIGURE_DIR}/4_avg_core_neighber_sig_vs_insig.png', dpi=300, bbox_inches='tight')
     print(f'Saved: {FIGURE_DIR}/4_avg_core_neighber_sig_vs_insig.png\n')
     
+
     # ======= Figure 5 =======
     # Core days count distribution of CA and EOA
     print('======= Figure 5 =======')
     # Get the type (CA/EOA) of each address via Web3.py
-    infura_url = args.infura_url #'https://mainnet.infura.io/v3/fc6dbeee65044e24a744ff54fec1718d'
+    infura_url = 'https://mainnet.infura.io/v3/fc6dbeee65044e24a744ff54fec1718d' #args.infura_url
     web3 = Web3(Web3.HTTPProvider(infura_url))
 
     core_address['type'] = core_address['address'].apply(lambda x: 1 if web3.eth.get_code(Web3.toChecksumAddress(x)).hex()=='0x' else 0)
@@ -144,16 +156,17 @@ def main(args):
 
     print('CA VS EOA: {} ({:.4}%) | {} ({:.4}%)'.format(len(core_CA), 100*len(core_CA)/len(core_address), core_EOA.shape[0], 100*core_EOA.shape[0]/core_address.shape[0]))
     
-    plt.style.use('seaborn-muted')
-    plt.figure(figsize=(8, 8))
+    # plt.style.use('seaborn-muted')
+    plt.figure(figsize=(16, 8))
     dt = pd.DataFrame({'CA':core_CA['core_days_cnt'], 'EOA':core_EOA['core_days_cnt']})
-    dt.boxplot(widths = 0.4,whis=0.5)
+    dt.boxplot(widths = 0.4,whis=0.5,vert=False)
     plt.title('Core days count distribution of CA and EOA')
-    plt.ylabel('Number of days becoming core')
+    plt.xlabel('Number of days becoming core')
     plt.rc('font', size=15)
-    plt.savefig(f'{FIGURE_DIR}/5_core_days_count_CA_vs_EOA.png', dpi=300)
+    plt.savefig(f'{FIGURE_DIR}/5_core_days_count_CA_vs_EOA.png', dpi=300, bbox_inches='tight')
     print(f'Saved: {FIGURE_DIR}/5_core_days_count_CA_vs_EOA.png\n')
     
+
     # ======= Figure 6 =======
     # Network Dynamics
     print('======= Figure 6 =======')
@@ -180,8 +193,9 @@ def main(args):
     network_fea[['num_core']].plot(ax=axes[2,1], figsize=(13,11), grid=False, title='Number of cores', xlabel=' ')
 
     plt.subplots_adjust(wspace =0.15, hspace =0.35)
-    plt.savefig(f'{FIGURE_DIR}/6_network_dynamics.png', dpi=300)
+    plt.savefig(f'{FIGURE_DIR}/6_network_dynamics.png', dpi=300, bbox_inches='tight')
     print(f'Saved: {FIGURE_DIR}/6_network_dynamics.png\n')
+
 
     # ======= Figure 7 =======
     # Correlation Heatmap
@@ -199,7 +213,7 @@ def main(args):
     heatmap.set_title('Triangle Correlation Heatmap: Network Features', fontdict={'fontsize':22}, pad=16);
 
     heatmap.set_facecolor((1,1,1))
-    plt.savefig(f'{FIGURE_DIR}/7_correlation_heatmap.png', dpi=300)
+    plt.savefig(f'{FIGURE_DIR}/7_correlation_heatmap.png', dpi=300, bbox_inches='tight')
     print(f'Saved: {FIGURE_DIR}/7_correlation_heatmap.png\n')
     
     
@@ -212,7 +226,7 @@ if __name__ == '__main__':
     parser.add_argument('--data-date', type=str, default='2022-07-12', help='The last date of the collected data')
     parser.add_argument('--start-date', type=str, default='2021-04-05', help='Start date')
     parser.add_argument('--end-date', type=str, default='2022-07-11', help='Start date')
-    parser.add_argument('--infura-url', type=str, help='Infura URL for the Ethereum node')
+    # parser.add_argument('--infura-url', type=str, help='Infura URL for the Ethereum node')
 
     args = parser.parse_args()
 
