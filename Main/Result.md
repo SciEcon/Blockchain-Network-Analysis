@@ -2,7 +2,7 @@
 
 # Resources
 
-GitHub Repo: [https://github.com/SciEcon/BNS-LQTY](https://github.com/SciEcon/BNS-LQTY)
+GitHub Repo: [https://github.com/SciEcon/BNS-LQTY](https://github.com/SciEcon/BNS-Liquity)
 
 |  | Coinbase | Binance |
 | --- | --- | --- |
