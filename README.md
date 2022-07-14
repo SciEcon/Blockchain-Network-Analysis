@@ -1,5 +1,5 @@
-# BNS-LQTY
-Blockchain Network Study on LQTY
+# BNS-Liquity
+Blockchain network study on two tokens (LUSD & LQTY) of [Liquity](https://www.liquity.org/)
 
 ## How to use
 
