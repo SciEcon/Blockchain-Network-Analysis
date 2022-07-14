@@ -115,7 +115,7 @@ def main(args):
     num_core_sig_F = sig_F['num_core']
 
     plt.style.use('seaborn-muted')
-    plt.figure(figsize=(16, 8))
+    plt.figure(figsize=(16, 5))
     dt = pd.DataFrame({'Significant':num_core_sig_T, 'Insignificant':num_core_sig_F})
     dt.boxplot(widths = 0.4,whis=0.5,vert=False)
     plt.title('Distribution of core nodes numbers')
@@ -131,11 +131,11 @@ def main(args):
     avg_core_neighbor_sig_T = sig_T['avg_core_neighbor']
     avg_core_neighbor_sig_F = sig_F['avg_core_neighbor']
 
-    plt.figure(figsize=(16, 8))
+    plt.figure(figsize=(16, 5))
     dt = pd.DataFrame({'Significant':avg_core_neighbor_sig_T, 'Insignificant':avg_core_neighbor_sig_F})
     dt.boxplot(widths = 0.4,whis=0.5,vert=False)
     plt.title('Distribution of avg number of neighbors of core nodes')
-    plt.ylabel('Avg number of neighbors of core nodes')
+    plt.xlabel('Avg number of neighbors of core nodes')
     plt.rc('font', size=13)
     plt.savefig(f'{FIGURE_DIR}/4_avg_core_neighber_sig_vs_insig.png', dpi=300, bbox_inches='tight')
     print(f'Saved: {FIGURE_DIR}/4_avg_core_neighber_sig_vs_insig.png\n')
@@ -157,7 +157,7 @@ def main(args):
     print('CA VS EOA: {} ({:.4}%) | {} ({:.4}%)'.format(len(core_CA), 100*len(core_CA)/len(core_address), core_EOA.shape[0], 100*core_EOA.shape[0]/core_address.shape[0]))
     
     # plt.style.use('seaborn-muted')
-    plt.figure(figsize=(16, 8))
+    plt.figure(figsize=(16, 5))
     dt = pd.DataFrame({'CA':core_CA['core_days_cnt'], 'EOA':core_EOA['core_days_cnt']})
     dt.boxplot(widths = 0.4,whis=0.5,vert=False)
     plt.title('Core days count distribution of CA and EOA')
