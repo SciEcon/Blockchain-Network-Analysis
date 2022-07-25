@@ -1,6 +1,16 @@
 # BNS-Liquity
 Blockchain network study on two tokens (LUSD & LQTY) of [Liquity](https://www.liquity.org/)
 
+## Contract address
+
+| Token | Protocol                                  | Contract Address                           |
+|-------|-------------------------------------------|--------------------------------------------|
+| LUSD  | [Liquity]( https://www.liquity.org/ )     | 0x5f98805A4E8be255a32880FDeC7F6728C6568bA0 |
+| LQTY  | [Liquity](https://www.liquity.org/)       | 0x6DEA81C8171D0bA574754EF6F8b412F2Ed88c54D |
+| AAVE  | [Aave]( https://aave.com/ )               | 0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9 |
+| COMP  | [Compound]( https://compound.finance/ )   | 0xc00e94Cb662C3520282E6f5717214004A7f26888 |
+| Dai   | [MakerDAO]( https://makerdao.com/ )       | 0x6B175474E89094C44Da98b954EedeAC495271d0F |
+
 ## How to use
 
 1. Create a [conda](https://docs.conda.io/en/latest/) environment with Python>3.7
