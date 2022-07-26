@@ -28,9 +28,9 @@ def main(args):
     dtypes = {'token_address':str, 'from_address':str, 'to_address':str, 'timestamp':str, 'value':np.float64}
     data = pd.read_csv(f"../Data/{token_name}_{today}.csv", dtype=dtypes)
 
-    data = data[data['from_address' != '0x0000000000000000000000000000000000000000']]
-    data = data[data['to_address' != '0x0000000000000000000000000000000000000000']]
-    
+    data = data[data['from_address'] != '0x0000000000000000000000000000000000000000']
+    data = data[data['to_address'] != '0x0000000000000000000000000000000000000000']
+
     start_date = list(data['timestamp'].unique())[-1]
     end_date = list(data['timestamp'].unique())[0]
     
