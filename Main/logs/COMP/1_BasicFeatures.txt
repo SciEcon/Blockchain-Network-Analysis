@@ -1,0 +1,17 @@
+============ Data Clean ============
+>> Token: COMP
+>> Time range: from 2020-03-04 to 2022-07-12
+>> Number of tx: 1799967
+>> Number of addresses involved: 845525
+>> Total value involved: 1.5823210903353386e+26
+>> Time to clean data: 9.71s
+=========================================================
+
+============ Network Features ============
+>> Number of features: 18
+>> Time to calculate network feature: 3254.36s
+=========================================================
+
+============ Save Data ============
+Saved > ../Data/COMP_22-07-12/01_agg_tx.csv
+Saved > ../Data/COMP_22-07-12/02_network_fea.csv

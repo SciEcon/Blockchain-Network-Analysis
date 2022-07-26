@@ -24,7 +24,7 @@ def main(args):
     time_start = time.time()
     
     # Read data
-    today = date.today().strftime('%y-%m-%d')
+    today = '22-07-12' #date.today().strftime('%y-%m-%d')
     dtypes = {'token_address':str, 'from_address':str, 'to_address':str, 'timestamp':str, 'value':np.float64}
     data = pd.read_csv(f"../Data/{token_name}_{today}.csv", dtype=dtypes)
     start_date = list(data['timestamp'].unique())[-1]
