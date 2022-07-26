@@ -27,6 +27,10 @@ def main(args):
     today = '22-07-12' #date.today().strftime('%y-%m-%d')
     dtypes = {'token_address':str, 'from_address':str, 'to_address':str, 'timestamp':str, 'value':np.float64}
     data = pd.read_csv(f"../Data/{token_name}_{today}.csv", dtype=dtypes)
+
+    data = data[data['from_address' != '0x0000000000000000000000000000000000000000']]
+    data = data[data['to_address' != '0x0000000000000000000000000000000000000000']]
+    
     start_date = list(data['timestamp'].unique())[-1]
     end_date = list(data['timestamp'].unique())[0]
     
@@ -75,7 +79,7 @@ def main(args):
     network_fea_t = agg_data.reset_index().groupby('timestamp').apply(get_core_neighbor).reset_index()
     network_fea['num_core'] = network_fea_t['num_core']
     network_fea['avg_core_neighbor'] = network_fea_t['avg_core_neighbor']
-    network_fea['significance'] = network_fea_t['significance']
+    # network_fea['significance'] = network_fea_t['significance']
 
     # How many days that each address is a core
     core_addresses_list = [core_address for core_addresses in list(network_fea_t.core_addresses) for core_address in core_addresses]

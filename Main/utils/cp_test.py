@@ -24,13 +24,12 @@ def get_core_neighbor(tx_df):
     # average number of degree, i.e., avg_core_neighbor
     avg_core_neighbor = np.mean(degree)
 
-    # p-value of significant test
-    import warnings
-    warnings.filterwarnings('ignore')
-    sig_c, sig_x, significant, p_values = cpnet.qstest(
-        c, x, G, alg, significance_level=0.05, num_of_rand_net=100, num_of_thread=16)
+    # # p-value of significant test
+    # import warnings
+    # warnings.filterwarnings('ignore')
+    # sig_c, sig_x, significant, p_values = cpnet.qstest(
+    #     c, x, G, alg, significance_level=0.05, num_of_rand_net=100, num_of_thread=16)
 
     return pd.DataFrame({'num_core': [len(core_addresses)],
                          'avg_core_neighbor': [avg_core_neighbor],
-                         'core_addresses': [core_addresses],
-                         'significance': p_values})
+                         'core_addresses': [core_addresses]})
