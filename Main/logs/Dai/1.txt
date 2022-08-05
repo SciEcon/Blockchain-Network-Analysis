@@ -1,0 +1,2 @@
+Number of TX: 7854343 | Number of addresses: 1769138
+>> Time 292.44s | Date 2019-01-01

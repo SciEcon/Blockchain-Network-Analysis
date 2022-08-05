@@ -11,7 +11,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 from utils.network_fea import get_network_features
-from utils.cp_test import get_core_neighbor
+from utils.cp_test import get_core_neighbor, get_core_neighbor_test
 
 SAVE_PATH = '../Data/'
 
@@ -76,10 +76,16 @@ def main(args):
     time_start = time.time()
 
     # Update nerwork_fea with num_core and avg_core_neighbor
-    network_fea_t = agg_data.reset_index().groupby('timestamp').apply(get_core_neighbor).reset_index()
-    network_fea['num_core'] = network_fea_t['num_core']
-    network_fea['avg_core_neighbor'] = network_fea_t['avg_core_neighbor']
-    # network_fea['significance'] = network_fea_t['significance']
+    if args.test == 0:
+        network_fea_t = agg_data.reset_index().groupby('timestamp').apply(get_core_neighbor).reset_index()
+        network_fea['num_core'] = network_fea_t['num_core']
+        network_fea['avg_core_neighbor'] = network_fea_t['avg_core_neighbor']
+    
+    elif args.test == 1:
+        network_fea_t = agg_data.reset_index().groupby('timestamp').apply(get_core_neighbor_test).reset_index()
+        network_fea['num_core'] = network_fea_t['num_core']
+        network_fea['avg_core_neighbor'] = network_fea_t['avg_core_neighbor']
+        network_fea['significance'] = network_fea_t['significance']
 
     # How many days that each address is a core
     core_addresses_list = [core_address for core_addresses in list(network_fea_t.core_addresses) for core_address in core_addresses]
@@ -125,6 +131,9 @@ if __name__ == '__main__':
     parser.add_argument('--token-name', type=str, default='LQTY', help='Token name')
     parser.add_argument('--start-date', type=str, help='Start date')
     parser.add_argument('--time-range', type=int, default=1, help='Time range')
+
+    # CP Structure test
+    parser.add_argument('--test', type=int, default=0, help='0-do not conduct cp structure test; 1-conduct cp structure test')
 
     args = parser.parse_args()
 
