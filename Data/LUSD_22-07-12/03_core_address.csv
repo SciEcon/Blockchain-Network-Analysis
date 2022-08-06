@@ -1,11 +1,11 @@
-address,core_days_cnt,type
-0x4f9fbb3f1e99b56e0fe2892e623ed36a76fc605d,455,0
-0xed279fdd11ca84beef15af5d39bb4d4bee23f0ca,437,0
-0x66017d22b0f8556afdd19fc67041899eb65a21bb,432,0
-0x16980c16811bde2b3358c1ce4341541a4c772ec9,384,0
-0x4e0924d3a751be199c426d52fb1f2337fa96f736,261,0
-0x74de5d4fcbf63e00296fd95d33236b9794016631,247,0
-0xf20ef17b889b437c151eb5ba15a47bfc62bff469,218,0
+address,core_days_cnt,type,note
+0x4f9fbb3f1e99b56e0fe2892e623ed36a76fc605d,455,0,Liquity: LQTY Staking
+0xed279fdd11ca84beef15af5d39bb4d4bee23f0ca,437,0,Vyper_contract (Vyper is a contract-oriented pythonic programming language that targets the Ethereum Virtual Machine (EVM).)
+0x66017d22b0f8556afdd19fc67041899eb65a21bb,432,0,Liquity: Stability Pool
+0x16980c16811bde2b3358c1ce4341541a4c772ec9,384,0,Uniswap V3: LUSD-DAI (Uniswap is a decentralized exchange that enables peer-to-peer market making.)
+0x4e0924d3a751be199c426d52fb1f2337fa96f736,261,0,Uniswap V3: LUSD-USDC 
+0x74de5d4fcbf63e00296fd95d33236b9794016631,247,0,AirSwap (a decentralized and peer-to-peer token trading network powered by Ethereum)
+0xf20ef17b889b437c151eb5ba15a47bfc62bff469,218,0,Uniswap V2: LUSD 2
 0x22f9dcf4647084d6c31b2765f6910cd85c178c18,160,0
 0xfdf12d1f85b5082877a6e070524f50f6c84faa6b,110,0
 0x9663f2ca0454accad3e094448ea6f77443880454,103,0

@@ -1,19 +1,19 @@
-address,core_days_cnt,type
-0xd8c9d9071123a059c6e0a945cf0e0c82b508d816,462,0
-0x4f9fbb3f1e99b56e0fe2892e623ed36a76fc605d,461,0
-0xd1d5a4c0ea98971894772dcd6d2f1dc71083c44e,434,0
-0xb13201b48b1e61593df055576964d0b3aab66ea3,336,0
-0x74de5d4fcbf63e00296fd95d33236b9794016631,271,0
-0x3d36e8df307afc3ebc90e9ef200c790ee9a93161,147,0
-0x75e89d5979e4f6fba9f97c104c2f0afb3f1dcb88,144,1
-0x28b67e0a4e570720c111c090c45daa065a54e58d,139,0
-0xb5d85cbf7cb3ee0d56b3bb207d5fc4b82f43f511,107,1
+address,core_days_cnt,type,note
+0xd8c9d9071123a059c6e0a945cf0e0c82b508d816,462,0,Liquity: Community Issuance 
+0x4f9fbb3f1e99b56e0fe2892e623ed36a76fc605d,461,0,Liquity: LQTY Staking
+0xd1d5a4c0ea98971894772dcd6d2f1dc71083c44e,434,0,Uniswap V3: LQTY
+0xb13201b48b1e61593df055576964d0b3aab66ea3,336,0,Uniswap V2: LQTY 4
+0x74de5d4fcbf63e00296fd95d33236b9794016631,271,0,AirSwap
+0x3d36e8df307afc3ebc90e9ef200c790ee9a93161,147,0,Bancor: Converter 645 (Bancor is a blockchain protocol that allows users to convert different virtual currency tokens directly and instantly instead of exchanging them on cryptocurrency exchanges like Coinbase.)
+0x75e89d5979e4f6fba9f97c104c2f0afb3f1dcb88,144,1,MEXC: Mexc.com (MEXC is a digital asset service provider providing real-time prices of crypto tokens such as Bitcoin BTC / Litecoin LTC/ and Ethereum ETH.)
+0x28b67e0a4e570720c111c090c45daa065a54e58d,139,0,Uniswap V3: LQTY 2 
+0xb5d85cbf7cb3ee0d56b3bb207d5fc4b82f43f511,107,1,Coinbase 5
 0xfd3dfb524b2da40c8a6d703c62be36b5d8540626,77,0
 0x27239549dd40e1d60f5b80b0c4196923745b1fd2,72,0
 0x220bda5c8994804ac96ebe4df184d25e5c2196d4,65,0
 0x9b8519a9a00100720ccdc8a120fbed319ca47a14,49,0
 0xd37a77e71ddf3373a79be2ebb76b6c4808bdf0d5,46,0
-0xe93381fb4c4f14bda253907b18fad305d799241a,42,1
+0xe93381fb4c4f14bda253907b18fad305d799241a,42,1,Huobi 10 (Huobi Global is a leading cryptocurrency exchange with a strong presence in the Asian markets.)
 0x9008d19f58aabd9ed0d60971565aa8510560ab41,39,0
 0x22f9dcf4647084d6c31b2765f6910cd85c178c18,39,0
 0x1111111254fb6c44bac0bed2854e76f90643097d,26,0
@@ -25,13 +25,13 @@ address,core_days_cnt,type
 0xc176761d388caf2f56cf03329d82e1e7c48ae09c,17,0
 0x55d59b791f06dc519b176791c4e037e8cf2f6361,17,0
 0xdb38ae75c5f44276803345f7f02e95a0aeef5944,16,0
-0xb9ee1e551f538a464e8f8c41e9904498505b49b0,15,1
+0xb9ee1e551f538a464e8f8c41e9904498505b49b0,15,1,Coinex (CoinEx is a low-fee cryptocurrency exchange with a wide range of available cryptocurrencies and advanced products such as margin trading.)
 0x0639076265e9f88542c91dcdeda65127974a5ca5,13,0
 0xcf16b17a215d1728b0a36a30a57beaaf7845f334,12,0
 0xba12222222228d8ba445958a75a0704d566bf2c8,11,0
 0x3e9381eb1dbbbcd4645e820593e2e313052f7c5e,9,0
 0x00ff66ab8699aafa050ee5ef5041d1503aa0849a,9,0
-0xceb69f6342ece283b2f5c9088ff249b5d0ae66ea,7,1
+0xceb69f6342ece283b2f5c9088ff249b5d0ae66ea,7,1,
 0x2ad932eccff9ebcd4a0d0fc9d5586a1870cf5876,7,0
 0x40ec5b33f54e0e8a33a975908c5ba1c14e5bbbdf,6,0
 0x1bd435f3c054b6e901b7b108a0ab7617c808677b,6,0
