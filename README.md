@@ -1,7 +1,50 @@
-# BNS-Liquity
-Blockchain network study on two tokens (LUSD & LQTY) of [Liquity](https://www.liquity.org/)
+# Blockchain Network Analysis
 
-## Contract address
+## Project information
+
+Blockchain Network Analysis: A Comparative Study of Decentralized Banks
+
+- Paper accepted by SAI Computing Conference 2023
+- by **Yufan Zhang, Zichao Chen, Yutong Sun, Yulin Liu, and Luyao Zhang**
+
+## Repository Structure
+
+```
+.
+├── Code
+│   ├── analysis.ipynb
+│   ├── extract_feature.py
+│   ├── query_tx.ipynb
+│   └── utils
+│       ├── cp_test.py
+│       └── network_fea.py
+├── Data
+│   ├── processedData
+│   │   ├── AAVE_2022-07-13
+│   │   ├── COMP_2022-07-13
+│   │   ├── Dai_2022-07-13
+│   │   ├── LQTY_2022-07-13
+│   │   └── LUSD_2022-07-13
+│   └── queriedData
+│       ├── AAVE_2022-07-13.csv
+│       ├── COMP_2022-07-13.csv
+│       ├── Dai_2022-07-13.csv
+│       ├── LQTY_2022-07-13.csv
+│       └── LUSD_2022-07-13.csv
+├── Figure
+│   ├── AAVE_2020-10-02-2022-07-12
+│   ├── BoxPlots
+│   ├── COMP_2020-03-06-2022-07-12
+│   ├── Dai_2019-11-18-2022-07-12
+│   ├── LQTY_2021-04-05-2022-07-12
+│   └── LUSD_2021-04-05-2022-07-12
+├── README.md
+└── requirements.txt
+```
+
+## How to use
+
+**Contract address**
 
 | Token | Protocol                              | Contract Address                           | Start Date |
 |-------|---------------------------------------|--------------------------------------------|------------|
@@ -11,12 +54,10 @@ Blockchain network study on two tokens (LUSD & LQTY) of [Liquity](https://www.li
 | COMP  | [Compound](https://compound.finance/) | 0xc00e94Cb662C3520282E6f5717214004A7f26888 | 2020-03-04 |
 | Dai   | [MakerDAO](https://makerdao.com/)     | 0x6B175474E89094C44Da98b954EedeAC495271d0F | 2019-11-13 |
 
-## How to use
-
-1. Create a [conda](https://docs.conda.io/en/latest/) environment with Python>3.7
+1. Create a [conda](https://docs.conda.io/en/latest/) environment with Python>=3.8
 
 ```bash
-conda create --name bns python=3.8
+conda create --name bna python=3.8
 conda activate bns
 ```
 
@@ -24,20 +65,23 @@ conda activate bns
 
 ```bash
 pip install -r requirements.txt
-cd Main
 ```
 
 3. Query token transaction records via [Kaggle Integration of BigQuery](https://www.kaggle.com/datasets/bigquery/ethereum-blockchain)
 
-- Run this notebook: https://www.kaggle.com/code/bruceyufanzhang/blockchain
+- Run this notebook: [https://www.kaggle.com/bruceyufanzhang/query-defi-token-transaction-records](https://www.kaggle.com/bruceyufanzhang/query-defi-token-transaction-records) (The same code can be found at [./Code/query_tx.ipynb](./Code/query_tx.ipynb))
 - Download the queried CSV files and put them file under `./Data/`
 - **Note**: You must use Kaggle to run the notebook. It won't work otherwise.
 
-4. Construct network features
+4. Extract network features and the core-periphery test results
 
 ```bash
-nohup python 01_Network_Features.py --token-name LQTY >> ./logs/LQTY.txt
-nohup python 01_Network_Features.py --token-name LUSD >> ./logs/LUSD.txt
+cd ./Code
+nohup python extract_feature.py --token-name LQTY >> ./logs/LQTY.txt
+nohup python extract_feature.py --token-name LUSD >> ./logs/LUSD.txt
+nohup python extract_feature.py --token-name AAVE >> ./logs/AAVE.txt
+nohup python extract_feature.py --token-name COMP >> ./logs/COMP.txt
+nohup python extract_feature.py --token-name Dai >> ./logs/Dai.txt
 ```
 
 - **Note**: If you are using ssh, you might need to use `nohup` to run the Python since it might takes **hours** for the [core-periphery test](https://github.com/skojaku/core-periphery-detection).
@@ -47,14 +91,7 @@ nohup python 01_Network_Features.py --token-name LUSD >> ./logs/LUSD.txt
 
 - The infura ENDPOINTS will be used to detect whether an address is CA or EOA, through [Web3.py](https://web3py.readthedocs.io/en/stable/quickstart.html)
    
-6. Run the blockchian network analysis and get the visualizations
-
-```bash
-python 02_Feature_Analysis.py --token-name LQTY --infura-url <infura ENDPOINTS> --start-date 2021-04-05 >> ./logs/LQTY_analysis.txt
-python 02_Feature_Analysis.py --token-name LUSD --infura-url <infura ENDPOINTS> --start-date 2021-04-15 >> ./logs/LQTY_analysis.txt
-```
-
-- **FYI**: Token genesis date (LQTY: 2021-04-05, LUSD: 2021-04-15)
+1. Run `analysis.ipynb` and get the visualization results
 - The output figures will be saved to `./Figure/{token_name}_{start_date}_{end_date}`
 
 ## Acknowledgements

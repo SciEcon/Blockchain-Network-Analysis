@@ -1,0 +1,23 @@
+Data Clean
+>> Token: LQTY
+>> Datetime range: from 2021-04-05 to 2022-07-12
+>> Number of transaction: 203729
+>> Number of addresses involved: 46752
+>> Total value involved: 4.162963567093237e+26
+>> Time to clean data: 0.72s
+=========================================================
+
+============ Network Features ============
+>> Number of features: 18
+>> Time to calculate network feature: 72.36s
+=========================================================
+
+Core-periphery Analysis
+>> Number of features: 20
+>> Time for core-periphery analysis: 29.08s
+=========================================================
+
+Save Data
+Saved > ../Data/processedData/LQTY_2022-07-13/01_agg_tx.csv
+Saved > ../Data/processedData/LQTY_2022-07-13/02_network_fea.csv
+Saved > ../Data/processedData/LQTY_2022-07-13/03_core_address.csv

@@ -1,2 +1,12 @@
-.DS_Store
-Data/*
+
+Data/processedData/LUSD_2022-07-13/01_agg_tx.csv
+Data/processedData/LQTY_2022-07-13/01_agg_tx.csv
+Data/processedData/AAVE_2022-07-13/01_agg_tx.csv
+Data/processedData/COMP_2022-07-13/01_agg_tx.csv
+Data/processedData/Dai_2022-07-13/01_agg_tx.csv
+
+Data/queriedData/LUSD_2022-07-13.csv
+Data/queriedData/LQTY_2022-07-13.csv
+Data/queriedData/AAVE_2022-07-13.csv
+Data/queriedData/COMP_2022-07-13.csv
+Data/queriedData/Dai_2022-07-13.csv
