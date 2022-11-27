@@ -7,6 +7,8 @@ Blockchain Network Analysis: A Comparative Study of Decentralized Banks
 - Paper accepted by [SAI Computing Conference 2023](https://saiconference.com/Computing)
 - by **[Yufan Zhang](https://yufanz.xyz/), Zichao Chen, Yutong Sun, Yulin Liu\*, and Luyao Zhang\***
 
+
+![Flow Chart](https://raw.githubusercontent.com/SciEcon/Blockchain-Network-Analysis/main/flowchart.png)
 ## Repository structure
 
 ```
@@ -53,8 +55,6 @@ Blockchain Network Analysis: A Comparative Study of Decentralized Banks
 | AAVE  | [Aave](https://aave.com/)             | 0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9 | 2020-10-02 |
 | COMP  | [Compound](https://compound.finance/) | 0xc00e94Cb662C3520282E6f5717214004A7f26888 | 2020-03-04 |
 | Dai   | [MakerDAO](https://makerdao.com/)     | 0x6B175474E89094C44Da98b954EedeAC495271d0F | 2019-11-13 |
-
-![Flow Chart](https://raw.githubusercontent.com/SciEcon/Blockchain-Network-Analysis/main/flowchart.png)
 
 
 1. Create a [conda](https://docs.conda.io/en/latest/) environment with Python>=3.8
