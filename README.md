@@ -58,7 +58,7 @@ Blockchain Network Analysis: A Comparative Study of Decentralized Banks
 
 ```bash
 conda create --name bna python=3.8
-conda activate bns
+conda activate bna
 ```
 
 2. Install required packages
