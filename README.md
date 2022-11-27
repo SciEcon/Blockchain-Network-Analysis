@@ -70,7 +70,7 @@ pip install -r requirements.txt
 3. Query token transaction records via [Kaggle Integration of BigQuery](https://www.kaggle.com/datasets/bigquery/ethereum-blockchain)
 
 - Run this notebook: [https://www.kaggle.com/bruceyufanzhang/query-defi-token-transaction-records](https://www.kaggle.com/bruceyufanzhang/query-defi-token-transaction-records) (The same code can be found at [./Code/query_tx.ipynb](./Code/query_tx.ipynb))
-- Download the queried CSV files and put them file under `./Data/`
+- Download the queried CSV files and put them file under `./Data/queriedData`
 - **Note**: You must use Kaggle to run the notebook. It won't work otherwise.
 
 4. Extract network features and the core-periphery test results
@@ -85,7 +85,7 @@ nohup python extract_feature.py --token-name Dai >> ./logs/Dai.txt
 ```
 
 - **Note**: If you are using ssh, you might need to use `nohup` to run the Python since it might takes **hours** for the [core-periphery test](https://github.com/skojaku/core-periphery-detection).
-- The output data will be saved to `./Data/{token_name}_{data_collected_date}/`
+- The output data will be saved to `./Data/processedData/{token_name}_{data_collected_date}/`
 
 5. Register a [infura project](https://infura.io/) for Ethereum API use, and remember the ENDPOINTS
 
