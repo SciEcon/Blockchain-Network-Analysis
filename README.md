@@ -5,9 +5,9 @@
 Blockchain Network Analysis: A Comparative Study of Decentralized Banks
 
 - Paper accepted by SAI Computing Conference 2023
-- by **Yufan Zhang, Zichao Chen, Yutong Sun, Yulin Liu, and Luyao Zhang**
+- by **[Yufan Zhang](https://yufanz.xyz/), Zichao Chen, Yutong Sun, Yulin Liu\*, and Luyao Zhang\***
 
-## Repository Structure
+## Repository structure
 
 ```
 .
