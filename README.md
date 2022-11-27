@@ -54,7 +54,7 @@ Blockchain Network Analysis: A Comparative Study of Decentralized Banks
 | COMP  | [Compound](https://compound.finance/) | 0xc00e94Cb662C3520282E6f5717214004A7f26888 | 2020-03-04 |
 | Dai   | [MakerDAO](https://makerdao.com/)     | 0x6B175474E89094C44Da98b954EedeAC495271d0F | 2019-11-13 |
 
-![Flow Chart](https://raw.githubusercontent.com/SciEcon/Blockchain-Network-Analysis//master/flowchart.png)
+![Flow Chart](https://raw.githubusercontent.com/SciEcon/Blockchain-Network-Analysis/main/flowchart.png)
 
 
 1. Create a [conda](https://docs.conda.io/en/latest/) environment with Python>=3.8
