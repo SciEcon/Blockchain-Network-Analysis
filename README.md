@@ -56,43 +56,43 @@ Blockchain Network Analysis: A Comparative Study of Decentralized Banks
 
 1. Create a [conda](https://docs.conda.io/en/latest/) environment with Python>=3.8
 
-```bash
-conda create --name bna python=3.8
-conda activate bna
-```
+    ```bash
+    conda create --name bna python=3.8
+    conda activate bna
+    ```
 
 2. Install required packages
 
-```bash
-pip install -r requirements.txt
-```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 3. Query token transaction records via [Kaggle Integration of BigQuery](https://www.kaggle.com/datasets/bigquery/ethereum-blockchain)
 
-- Run this notebook: [https://www.kaggle.com/bruceyufanzhang/query-defi-token-transaction-records](https://www.kaggle.com/bruceyufanzhang/query-defi-token-transaction-records) (The same code can be found at [./Code/query_tx.ipynb](./Code/query_tx.ipynb))
-- Download the queried CSV files and put them file under `./Data/queriedData`
-- **Note**: You must use Kaggle to run the notebook. It won't work otherwise.
+   - Run this notebook: [https://www.kaggle.com/bruceyufanzhang/query-defi-token-transaction-records](https://www.kaggle.com/bruceyufanzhang/query-defi-token-transaction-records) (The same code can be found at [./Code/query_tx.ipynb](./Code/query_tx.ipynb))
+  - Download the queried CSV files and put them file under `./Data/queriedData`
+  - **Note**: You must use Kaggle to run the notebook. It won't work otherwise.
 
 4. Extract network features and the core-periphery test results
 
-```bash
-cd ./Code
-nohup python extract_feature.py --token-name LQTY >> ./logs/LQTY.txt
-nohup python extract_feature.py --token-name LUSD >> ./logs/LUSD.txt
-nohup python extract_feature.py --token-name AAVE >> ./logs/AAVE.txt
-nohup python extract_feature.py --token-name COMP >> ./logs/COMP.txt
-nohup python extract_feature.py --token-name Dai >> ./logs/Dai.txt
-```
+    ```bash
+    cd ./Code
+    nohup python extract_feature.py --token-name LQTY >> ./logs/LQTY.txt
+    nohup python extract_feature.py --token-name LUSD >> ./logs/LUSD.txt
+    nohup python extract_feature.py --token-name AAVE >> ./logs/AAVE.txt
+    nohup python extract_feature.py --token-name COMP >> ./logs/COMP.txt
+    nohup python extract_feature.py --token-name Dai >> ./logs/Dai.txt
+    ```
 
-- **Note**: If you are using ssh, you might need to use `nohup` to run the Python since it might takes **hours** for the [core-periphery test](https://github.com/skojaku/core-periphery-detection).
-- The output data will be saved to `./Data/processedData/{token_name}_{data_collected_date}/`
+   - **Note**: If you are using ssh, you might need to use `nohup` to run the Python since it might takes **hours** for the [core-periphery test](https://github.com/skojaku/core-periphery-detection).
+   - The output data will be saved to `./Data/processedData/{token_name}_{data_collected_date}/`
 
 5. Register a [infura project](https://infura.io/) for Ethereum API use, and remember the ENDPOINTS
 
-- The infura ENDPOINTS will be used to detect whether an address is CA or EOA, through [Web3.py](https://web3py.readthedocs.io/en/stable/quickstart.html)
+   - The infura ENDPOINTS will be used to detect whether an address is CA or EOA, through [Web3.py](https://web3py.readthedocs.io/en/stable/quickstart.html)
    
-1. Run `analysis.ipynb` and get the visualization results
-- The output figures will be saved to `./Figure/{token_name}_{start_date}_{end_date}`
+6. Run `analysis.ipynb` and get the visualization results
+   - The output figures will be saved to `./Figure/{token_name}_{start_date}_{end_date}`
 
 ## Acknowledgements
 
