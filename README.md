@@ -2,14 +2,18 @@
 
 ## Project information
 
-Blockchain Network Analysis: A Comparative Study of Decentralized Banks
+**Blockchain Network Analysis: A Comparative Study of Decentralized Banks**
 
 - Paper accepted by [SAI Computing Conference 2023](https://saiconference.com/Computing)
 - by **[Yufan Zhang](https://yufanz.xyz/), Zichao Chen, Yutong Sun, Yulin Liu\*, and Luyao Zhang\***
 
+The flow chart of the blockchain network analysis methodology
 
 ![Flow Chart](https://raw.githubusercontent.com/SciEcon/Blockchain-Network-Analysis/main/flowchart.png)
+
 ## Repository structure
+
+This repository includes the supplementary resources, data, and code.
 
 ```
 .
