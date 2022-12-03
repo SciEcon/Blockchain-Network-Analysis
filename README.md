@@ -48,6 +48,25 @@ This repository includes the supplementary resources, data, and code.
 └── requirements.txt
 ```
 
+### Data
+
+| Token Name | Queried Data (need to download by yourself) | Processed Data                         |
+|------------|---------------------------------------------|----------------------------------------|
+| AAVE       | ./Data/queriedData/AAVE_2022-07-13.csv      | ./Data/processedData/AAVE_2022-07-13/* |
+| COMP       | ./Data/queriedData/COMP_2022-07-13.csv      | ./Data/processedData/COMP_2022-07-13/* |
+| Dai        | ./Data/queriedData/Dai_2022-07-13.csv       | ./Data/processedData/Dai_2022-07-13/*  |
+| LQTY       | ./Data/queriedData/LQTY_2022-07-13.csv      | ./Data/processedData/LQTY_2022-07-13/* |
+| LUSD       | ./Data/queriedData/LUSD_2022-07-13.csv      | ./Data/processedData/LUSD_2022-07-13/* |
+
+### Code
+
+| Content                                         | File                         |
+|-------------------------------------------------|------------------------------|
+| Query the transaction data in Kaggle kernel     | ./Code/query_tx.ipynb        |
+| Extract the network features                    | ./Code/extract_feature.ipynb |
+| Analysis the features and perform visualization | ./Code/analysis.py           |
+
+
 ## How to use
 
 **Contract address**
@@ -76,9 +95,10 @@ This repository includes the supplementary resources, data, and code.
 
 3. Query token transaction records via [Kaggle Integration of BigQuery](https://www.kaggle.com/datasets/bigquery/ethereum-blockchain)
 
-   - Run this notebook: [https://www.kaggle.com/bruceyufanzhang/query-defi-token-transaction-records](https://www.kaggle.com/bruceyufanzhang/query-defi-token-transaction-records) (The same code can be found at [./Code/query_tx.ipynb](./Code/query_tx.ipynb))
+   - Since the data is too big to commit to the GitHub, query by yourself by running this Kaggle notebook: [https://www.kaggle.com/bruceyufanzhang/query-defi-token-transaction-records](https://www.kaggle.com/bruceyufanzhang/query-defi-token-transaction-records) (The same code can be found at [./Code/query_tx.ipynb](./Code/query_tx.ipynb))
      - Download the queried CSV files and put them file under `./Data/queriedData`
      - **Note**: You must use Kaggle to run the notebook. It won't work otherwise.
+   <!-- - [Method 2] Download our queried data from Google Drive -->
 
 4. Extract network features and the core-periphery test results
 
