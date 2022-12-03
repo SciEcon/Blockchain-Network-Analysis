@@ -97,7 +97,7 @@ This repository includes the supplementary resources, data, and code.
 
    - Since the data is too big to commit to the GitHub, query by yourself by running this Kaggle notebook: [https://www.kaggle.com/bruceyufanzhang/query-defi-token-transaction-records](https://www.kaggle.com/bruceyufanzhang/query-defi-token-transaction-records) (The same code can be found at [./Code/query_tx.ipynb](./Code/query_tx.ipynb))
      - Download the queried CSV files and put them file under `./Data/queriedData`
-     - **Note**: You must use Kaggle to run the notebook. It won't work otherwise.
+     - **Note**: You must use Kaggle to run the notebook. It won't work elsewhere.
    <!-- - [Method 2] Download our queried data from Google Drive -->
 
 4. Extract network features and the core-periphery test results
