@@ -2,7 +2,7 @@
 
 ## Project information
 
-**Blockchain Network Analysis: A Comparative Study of Decentralized Banks**
+**The Portfolio for [Blockchain Network Analysis: A Comparative Study of Decentralized Banks](https://arxiv.org/abs/2212.05632)**
 
 - Paper accepted by [SAI Computing Conference 2023](https://saiconference.com/Computing)
 - by **[Yufan Zhang](https://yufanz.xyz/), Zichao Chen, Yutong Sun, Yulin Liu\*, and [Luyao Zhang](http://scholars.duke.edu/person/luyao.zhang)\***
