@@ -1,5 +1,7 @@
 # Blockchain Network Analysis
 
+[![DOI](https://zenodo.org/badge/503755689.svg)](https://zenodo.org/badge/latestdoi/503755689)
+
 ## Project information
 
 **The Portfolio for [Blockchain Network Analysis: A Comparative Study of Decentralized Banks](https://arxiv.org/abs/2212.05632)**
